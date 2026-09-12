@@ -1,73 +1,26 @@
-# Welcome to your Lovable project
+# PadelMatch
 
-## Project info
+Plataforma para organizar partidos de pádel, competir en torneos y conectar con jugadores — ranking ELO, estadísticas y comunidad.
 
-**URL**: https://lovable.dev/projects/2634087d-9ce0-4efc-a7aa-fa2160852648
+## Estado real (importante)
 
-## How can I edit this code?
+Este es el menos avanzado de la tanda: es una landing + shell de autenticación con las pantallas del producto armadas como **prototipo visual sobre datos mock**, no como features terminadas.
 
-There are several ways of editing your application.
+- **Auth** — real, contra Supabase (`profiles` + `user_roles`).
+- **Matches** — UI completa pero con datos hardcodeados en el componente (`// Mock data - will be replaced with real data from Supabase`). No hay tabla `matches` en las migraciones.
+- **Tournaments** — pantalla "Próximamente", sin lógica.
+- **Community** — pantalla "Próximamente", sin lógica.
 
-**Use Lovable**
+Lo que falta para que sea real: modelar `matches` (jugadores, cupos, nivel, ubicación), `tournaments` (brackets) y el sistema de ranking ELO que promete la descripción, y conectar las tres pantallas a esas tablas en vez de al array hardcodeado.
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/2634087d-9ce0-4efc-a7aa-fa2160852648) and start prompting.
+## Stack
 
-Changes made via Lovable will be committed automatically to this repo.
+React 18 + TypeScript + Vite, shadcn/ui sobre Radix, Tailwind, React Router, React Query, Supabase (Postgres + Auth) como backend.
 
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
+## Desarrollo local
 
 ```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+npm install
+cp .env.example .env   # completar con las credenciales de un proyecto Supabase (la instancia original no está conectada)
 npm run dev
 ```
-
-**Edit a file directly in GitHub**
-
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/2634087d-9ce0-4efc-a7aa-fa2160852648) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
